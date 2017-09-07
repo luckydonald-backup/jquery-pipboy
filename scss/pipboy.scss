@@ -1,0 +1,77 @@
+$amber : #FFB642;
+*{
+  font-family: 'Oxygen Mono', monospace;
+}
+body{
+  display: flex;
+}
+span{
+  border-top: 1px solid $amber;
+  border-right: 1px solid $amber;
+  color: $amber;
+}
+.bold,.screenBar button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#screen{
+  width: 40rem;
+  height: 30rem;
+  border: 1px solid black;
+  background-color: black;
+}
+#leftside{
+  width: 10rem;
+  height: 25rem;
+  border: 1px solid black;
+}
+#screen{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.img{
+  width: 35rem;
+  height: 20rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset -2px 0px 5px 9px rgba(0,0,0,1);
+}
+.boy{
+  background-image: url('../../img/fallout.png');
+}
+.map{
+  background-image: url('../../img/map.jpg');
+}
+.screenCont{
+  width: 35rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.threebuttons{
+  width: 5rem;
+  height: 5rem;
+  background:radial-gradient(white,yellow,orange,red);
+  border-radius:50%;
+  box-shadow: inset -2px 0px 5px 9px rgba(0,0,0,1);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.flexdiv{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+.screenBar{
+  display: flex;
+  justify-content: space-around;
+}
+.screenBar button{
+  border: 0;
+  color: $amber;
+  background-color: black;
+  font-size: 1rem;
+}
