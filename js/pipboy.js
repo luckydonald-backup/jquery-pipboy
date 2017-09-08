@@ -37,8 +37,28 @@ let scrHead = $('<div>');
 let scrContain = $('<div>');
 let scrFoot = $('<div>');
 scrFoot.addClass('screenBar');
-scrHead.addClass('screenBar');
+scrHead.addClass('screenHead');
 scrContain.addClass('screenCont');
+
+let weapon = [{
+  name:'shootgun',
+  description:'aaa'},
+  {
+    name:'pistol',
+    description:'bbb'},
+    {
+      name:'granate',
+      description:'ccc'},
+      {
+        name:'knife',
+        description:'ddd'},
+        {
+          name:'dynamite',
+          description:'eee'},
+          {
+            name:'bomb',
+            description:'fff'},
+];
 
 
 pipScreen.append(scrHead);
@@ -46,7 +66,6 @@ pipScreen.append(scrContain);
 pipScreen.append(scrFoot);
 
 let name = $('<span>');
-name.addClass('bold');
 let spanOne = $('<span>');
 let spanTwo = $('<span>');
 let spanThree = $('<span>');
@@ -74,7 +93,16 @@ let vaultBoy = $('<div>');
 vaultBoy.addClass('img boy');
 
 let dataMap = $('<div>');
-dataMap.addClass('img map')
+dataMap.addClass('img map');
+
+let weaponsList = $('<div>');
+weaponsList.addClass('weaponsList');
+
+let weaponsDesc = $('<div>');
+weaponsDesc.addClass('description');
+
+
+
 
 buttonStats.on('click',function(event){
 
@@ -93,6 +121,8 @@ buttonStats.on('click',function(event){
     buttonFour.text(' -Perks- ');
     buttonFive.text(' -General- ');
 
+    weaponsList.empty();
+    weaponsDesc.remove();
     dataMap.remove();
   }
   else{
@@ -103,13 +133,38 @@ buttonStats.on('click',function(event){
 })
 
 buttonItems.on('click',function(event){
-
   if(name.text()!=='Items'){
     name.text('Items ');
     spanOne.text(' Lvl 10 ');
     spanTwo.text(' HP 250/250 ');
     spanThree.text(' AP 65/65 ');
     spanFour.text(' Caps 2045 ');
+    scrContain.append(weaponsList);
+    scrContain.append(weaponsDesc);
+    // for(var i =0;i<weapons.length;i++){
+    //   scrContain.append(weaponsList);
+    //   var para = $('<p>');
+    //   var opis = $('<div>')
+    //   para.text(weapons[i].question);
+    //   opis.text(weapons[i].answers);
+    //   weaponsList.append(para);
+    //
+    // }
+
+    $.each(weapon, function (key, value) {
+      let para = $('<p>');
+      let desc = $('<p>');
+      weaponsList.append(para);
+
+      para.text(value.name);
+      desc.text(value.description);
+      para.on('mouseenter',function(){
+        weaponsDesc.append(desc);
+      })
+      para.on('mouseout',function(){
+        weaponsDesc.empty();
+      })
+    });
 
     buttonOne.text(' -Weapons- ');
     buttonTwo.text(' -Appearel- ');
@@ -134,12 +189,14 @@ buttonData.on('click',function(event){
 
     scrContain.append(dataMap);
 
-    buttonOne.text(' -Local Map- ');
-    buttonTwo.text(' -World Map- ');
+    buttonOne.text(' -World Map- ');
+    buttonTwo.text(' -Local Map- ');
     buttonThree.text(' -Quests- ');
     buttonFour.text(' -Misc- ');
     buttonFive.text(' -Radio- ');
     vaultBoy.remove();
+    weaponsList.empty();
+    weaponsDesc.remove();
   }
   else{
     event.preventDefaut;
