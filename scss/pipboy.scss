@@ -1,6 +1,10 @@
 $amber : #FFB642;
 *{
   font-family: 'Oxygen Mono', monospace;
+  box-sizing: border-box;
+}
+button{
+  cursor: pointer;
 }
 body{
   display: flex;
@@ -10,27 +14,29 @@ span{
   border-right: 1px solid $amber;
   color: $amber;
 }
-.bold,.screenBar button {
+.screenBar button {
   font-weight: bold;
   text-transform: uppercase;
+  &:hover{
+    border: 1px solid $amber;
+  }
 }
 #screen{
   width: 40rem;
   height: 30rem;
   border: 1px solid black;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 #leftside{
   width: 10rem;
   height: 25rem;
   border: 1px solid black;
 }
-#screen{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
+
 .img{
   width: 35rem;
   height: 20rem;
@@ -48,8 +54,25 @@ span{
   width: 35rem;
   height: 20rem;
   display: flex;
-  justify-content: center;
+  color: $amber;
+  justify-content: space-between;
+}
+.weaponsList{
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  p{
+    cursor: pointer;
+    &:hover{
+      border: 1px solid $amber;
+    }
+    }
+  }
+.description{
+  display: flex;
   align-items: center;
+  margin-right: 5rem;
 }
 .threebuttons{
   width: 5rem;
@@ -69,7 +92,10 @@ span{
   display: flex;
   justify-content: space-around;
 }
-.screenBar button{
+.screenHead{
+  
+}
+.screenBar button,.weaponsList button{
   border: 0;
   color: $amber;
   background-color: black;
