@@ -101,7 +101,39 @@ weaponsList.addClass('weaponsList');
 let weaponsDesc = $('<div>');
 weaponsDesc.addClass('description');
 
+let meter = $('<div>');
+meter.addClass('meter');
+leftside.append(meter);
+let scale = $('<div>', {class:'scale'});
+let scale1 = $('<div>', {class:'scale1'});
+let scale2 = $('<div>', {class:'scale2'});
+let scale3 = $('<div>', {class:'scale3'});
+let mask = $('<div>',{class:'scale-mask'});
+let needle = $('<div>',{class:'needle'});
+let pointer = $('<div>',{class:'pointer'});
+let pivot = $('<div>',{class:'pivot'});
+let leftdiv = $('<div>',{class:'leftdiv'});
+let pip = $('<div>');
+let version = $('<div>');
+let model = $('<div>');
 
+meter.append(scale);
+meter.append(mask);
+meter.append(needle);
+scale.append(scale1);
+scale.append(scale2);
+scale.append(scale3);
+needle.append(pointer);
+needle.append(pivot);
+
+leftside.append(leftdiv);
+leftdiv.append(pip);
+leftdiv.append(version);
+leftdiv.append(model);
+
+pip.text('Pipboy');
+version.text('Vault 3');
+model.text('Model 3000');
 
 
 buttonStats.on('click',function(event){
@@ -141,15 +173,6 @@ buttonItems.on('click',function(event){
     spanFour.text(' Caps 2045 ');
     scrContain.append(weaponsList);
     scrContain.append(weaponsDesc);
-    // for(var i =0;i<weapons.length;i++){
-    //   scrContain.append(weaponsList);
-    //   var para = $('<p>');
-    //   var opis = $('<div>')
-    //   para.text(weapons[i].question);
-    //   opis.text(weapons[i].answers);
-    //   weaponsList.append(para);
-    //
-    // }
 
     $.each(weapon, function (key, value) {
       let para = $('<p>');
@@ -185,7 +208,7 @@ buttonData.on('click',function(event){
     spanOne.text('');
     spanTwo.text(' Mojave ');
     spanThree.text('');
-    spanFour.text(' 10.06.1981 ');
+    spanFour.text(' 10.06.81 ');
 
     scrContain.append(dataMap);
 
