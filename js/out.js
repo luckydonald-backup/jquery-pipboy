@@ -69,234 +69,403 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-let body = $('body');
-let leftside = $('<div>');
-let pipBoy = $('<div>');
-let pipScreen = $('<div>');
-let pipButton = $('<div>');
+  let body = $('body');
+  let leftside = $('<div>');
+  let pipBoy = $('<div>');
+  let pipScreen = $('<div>');
+  let pipButton = $('<div>');
 
-body.append(leftside);
-body.append(pipBoy);
+  body.append(leftside);
+  body.append(pipBoy);
 
-pipBoy.attr('id','pipBoy');
-leftside.attr('id','leftside');
-pipScreen.attr('id','screen');
+  pipBoy.attr('id', 'pipBoy');
+  leftside.attr('id', 'leftside');
+  pipScreen.attr('id', 'screen');
 
-pipButton.addClass('flexdiv')
+  pipButton.addClass('flexdiv')
 
-pipBoy.append(pipScreen);
-pipBoy.append(pipButton);
+  pipBoy.append(pipScreen);
+  pipBoy.append(pipButton);
 
-let buttonStats = $('<button>Stats</button>');
-let buttonItems = $('<button>Items</button>');
-let buttonData = $('<button>Data</button>');
-pipButton.append(buttonStats);
-pipButton.append(buttonItems);
-pipButton.append(buttonData);
+  let buttonStats = $('<button>Stats</button>');
+  let buttonItems = $('<button>Items</button>');
+  let buttonData = $('<button>Data</button>');
+  pipButton.append(buttonStats);
+  pipButton.append(buttonItems);
+  pipButton.append(buttonData);
 
-buttonStats.addClass('threebuttons');
-buttonItems.addClass('threebuttons');
-buttonData.addClass('threebuttons');
+  buttonStats.addClass('threebuttons');
+  buttonItems.addClass('threebuttons');
+  buttonData.addClass('threebuttons');
 
-buttonStats.attr('id','stats');
-buttonItems.attr('id','items');
-buttonData.attr('id','data');
+  buttonStats.attr('id', 'stats');
+  buttonItems.attr('id', 'items');
+  buttonData.attr('id', 'data');
 
-let scrHead = $('<div>');
-let scrContain = $('<div>');
-let scrFoot = $('<div>');
-scrFoot.addClass('screenBar');
-scrHead.addClass('screenHead');
-scrContain.addClass('screenCont');
+  let scrHead = $('<div>');
+  let scrContain = $('<div>');
+  let scrFoot = $('<div>');
+  scrFoot.addClass('screenBar');
+  scrHead.addClass('screenHead');
+  scrContain.addClass('screenCont');
 
-let weapon = [{
-  name:'shootgun',
-  description:'aaa'},
-  {
-    name:'pistol',
-    description:'bbb'},
+  let weapon = [
     {
-      name:'granate',
-      description:'ccc'},
-      {
-        name:'knife',
-        description:'ddd'},
-        {
-          name:'dynamite',
-          description:'eee'},
-          {
-            name:'bomb',
-            description:'fff'},
-];
+      name: 'shootgun',
+      description: 'aaa'
+    }, {
+      name: 'pistol',
+      description: 'bbb'
+    }, {
+      name: 'granate',
+      description: 'ccc'
+    }, {
+      name: 'knife',
+      description: 'ddd'
+    }, {
+      name: 'dynamite',
+      description: 'eee'
+    }, {
+      name: 'bomb',
+      description: 'fff'
+    }
+  ];
 
+  let armors = [
+    {
+      name: 'RNK armor',
+      description: 'ggg'
+    }, {
+      name: 'Brotherhood of steel armor',
+      description: 'hhh'
+    }, {
+      name: 'Legion heavy armor',
+      description: 'iii'
+    }, {
+      name: 'cowboy hat',
+      description: 'jjj'
+    }, {
+      name: 'helmet',
+      description: 'kkk'
+    }, {
+      name: 'mask',
+      description: 'lll'
+    }
+  ];
 
-pipScreen.append(scrHead);
-pipScreen.append(scrContain);
-pipScreen.append(scrFoot);
+  let aid = [
+    {
+      name: 'stimpack',
+      description: 'mmm'
+    }, {
+      name: 'fresh water',
+      description: 'nnn'
+    }, {
+      name: 'Anti-rad',
+      description: 'ooo'
+    }, {
+      name: 'Med-X',
+      description: 'ppp'
+    }, {
+      name: 'medical bag',
+      description: 'rrr'
+    }, {
+      name: 'Nuka-Cola',
+      description: 'sss'
+    }
+  ];
 
-let name = $('<span>');
-let spanOne = $('<span>');
-let spanTwo = $('<span>');
-let spanThree = $('<span>');
-let spanFour = $('<span>');
+  let misc = [
+    {
+      name: 'electronic scrap',
+      description: 'ttt'
+    }, {
+      name: 'pre-war book',
+      description: 'uuu'
+    }, {
+      name: 'canteen',
+      description: 'www'
+    }, {
+      name: 'superglue',
+      description: 'yyy'
+    }, {
+      name: 'screwdriver',
+      description: 'zzz'
+    }, {
+      name: 'hammer',
+      description: '123'
+    }
+  ];
 
-scrHead.append(name);
-scrHead.append(spanOne);
-scrHead.append(spanTwo);
-scrHead.append(spanThree);
-scrHead.append(spanFour);
+  let ammo = [
+    {
+      name: '10mm',
+      description: '10mm'
+    }, {
+      name: 'Magnum .44',
+      description: '.44'
+    }, {
+      name: 'fusion cell',
+      description: 'cell'
+    }, {
+      name: '5mm',
+      description: '5mm'
+    }, {
+      name: '20 gauge',
+      description: '20ga'
+    }, {
+      name: 'rocket',
+      description: 'rocket'
+    }
+  ];
 
-let buttonOne = $('<button>');
-let buttonTwo = $('<button>');
-let buttonThree = $('<button>');
-let buttonFour = $('<button>');
-let buttonFive = $('<button>');
+  pipScreen.append(scrHead);
+  pipScreen.append(scrContain);
+  pipScreen.append(scrFoot);
 
-scrFoot.append(buttonOne);
-scrFoot.append(buttonTwo);
-scrFoot.append(buttonThree);
-scrFoot.append(buttonFour);
-scrFoot.append(buttonFive);
+  let name = $('<span>');
+  let spanOne = $('<span>');
+  let spanTwo = $('<span>');
+  let spanThree = $('<span>');
+  let spanFour = $('<span>');
 
-let vaultBoy = $('<div>');
-vaultBoy.addClass('img boy');
+  scrHead.append(name);
+  scrHead.append(spanOne);
+  scrHead.append(spanTwo);
+  scrHead.append(spanThree);
+  scrHead.append(spanFour);
 
-let dataMap = $('<div>');
-dataMap.addClass('img map');
+  let buttonOne = $('<button>');
+  let buttonTwo = $('<button>');
+  let buttonThree = $('<button>');
+  let buttonFour = $('<button>');
+  let buttonFive = $('<button>');
 
-let weaponsList = $('<div>');
-weaponsList.addClass('weaponsList');
+  scrFoot.append(buttonOne);
+  scrFoot.append(buttonTwo);
+  scrFoot.append(buttonThree);
+  scrFoot.append(buttonFour);
+  scrFoot.append(buttonFive);
 
-let weaponsDesc = $('<div>');
-weaponsDesc.addClass('description');
+  let vaultBoy = $('<div>');
+  vaultBoy.addClass('img boy');
 
-let meter = $('<div>');
-meter.addClass('meter');
-leftside.append(meter);
-let scale = $('<div>', {class:'scale'});
-let scale1 = $('<div>', {class:'scale1'});
-let scale2 = $('<div>', {class:'scale2'});
-let scale3 = $('<div>', {class:'scale3'});
-let mask = $('<div>',{class:'scale-mask'});
-let needle = $('<div>',{class:'needle'});
-let pointer = $('<div>',{class:'pointer'});
-let pivot = $('<div>',{class:'pivot'});
-let leftdiv = $('<div>',{class:'leftdiv'});
-let pip = $('<div>');
-let version = $('<div>');
-let model = $('<div>');
+  let dataMap = $('<div>');
+  dataMap.addClass('img map');
 
-meter.append(scale);
-meter.append(mask);
-meter.append(needle);
-scale.append(scale1);
-scale.append(scale2);
-scale.append(scale3);
-needle.append(pointer);
-needle.append(pivot);
+  let weaponsList = $('<div>');
+  weaponsList.addClass('weaponsList');
 
-leftside.append(leftdiv);
-leftdiv.append(pip);
-leftdiv.append(version);
-leftdiv.append(model);
+  let weaponsDesc = $('<div>');
+  weaponsDesc.addClass('description');
 
-pip.text('Pipboy');
-version.text('Vault 3');
-model.text('Model 3000');
+  let armorList = $('<div>');
+  armorList.addClass('weaponsList');
 
+  let armorDesc = $('<div>');
+  armorDesc.addClass('description');
 
-buttonStats.on('click',function(event){
+  let meter = $('<div>');
+  meter.addClass('meter');
+  leftside.append(meter);
+  let scale = $('<div>', {class: 'scale'});
+  let scale1 = $('<div>', {class: 'scale1'});
+  let scale2 = $('<div>', {class: 'scale2'});
+  let scale3 = $('<div>', {class: 'scale3'});
+  let mask = $('<div>', {class: 'scale-mask'});
+  let needle = $('<div>', {class: 'needle'});
+  let pointer = $('<div>', {class: 'pointer'});
+  let pivot = $('<div>', {class: 'pivot'});
+  let leftdiv = $('<div>', {class: 'leftdiv'});
+  let pip = $('<div>');
+  let version = $('<div>');
+  let model = $('<div>');
 
-  if(name.text()!=='Stats'){
-    name.text('Stats ');
-    spanOne.text(' Lvl 10 ');
-    spanTwo.text(' HP 250/250 ');
-    spanThree.text(' AP 65/65 ');
-    spanFour.text(' XP 3000/4500 ');
+  meter.append(scale);
+  meter.append(mask);
+  meter.append(needle);
+  scale.append(scale1);
+  scale.append(scale2);
+  scale.append(scale3);
+  needle.append(pointer);
+  needle.append(pivot);
 
-    scrContain.append(vaultBoy);
+  leftside.append(leftdiv);
+  leftdiv.append(pip);
+  leftdiv.append(version);
+  leftdiv.append(model);
 
-    buttonOne.text(' -Status- ');
-    buttonTwo.text(' -S.P.E.C.I.A.L- ');
-    buttonThree.text(' -Skills- ');
-    buttonFour.text(' -Perks- ');
-    buttonFive.text(' -General- ');
+  pip.text('Pipboy');
+  version.text('Vault 3');
+  model.text('Model 3000');
 
-    weaponsList.empty();
-    weaponsDesc.remove();
-    dataMap.remove();
-  }
-  else{
-    event.preventDefaut;
+  buttonStats.on('click', function(event) {
 
-  }
+    if (name.text() !== 'Stats') {
+      name.text('Stats ');
+      spanOne.text(' Lvl 10 ');
+      spanTwo.text(' HP 250/250 ');
+      spanThree.text(' AP 65/65 ');
+      spanFour.text(' XP 3000/4500 ');
 
-})
+      scrContain.append(vaultBoy);
 
-buttonItems.on('click',function(event){
-  if(name.text()!=='Items'){
-    name.text('Items ');
-    spanOne.text(' Lvl 10 ');
-    spanTwo.text(' HP 250/250 ');
-    spanThree.text(' AP 65/65 ');
-    spanFour.text(' Caps 2045 ');
-    scrContain.append(weaponsList);
-    scrContain.append(weaponsDesc);
+      buttonOne.text(' -Status- ');
+      buttonTwo.text(' -S.P.E.C.I.A.L- ');
+      buttonThree.text(' -Skills- ');
+      buttonFour.text(' -Perks- ');
+      buttonFive.text(' -General- ');
 
-    $.each(weapon, function (key, value) {
-      let para = $('<p>');
-      let desc = $('<p>');
-      weaponsList.append(para);
+      weaponsList.empty();
+      weaponsDesc.remove();
+      dataMap.remove();
+    } else {
+      event.preventDefaut;
 
-      para.text(value.name);
-      desc.text(value.description);
-      para.on('mouseenter',function(){
-        weaponsDesc.append(desc);
-      })
-      para.on('mouseout',function(){
-        weaponsDesc.empty();
-      })
+    }
+
+  })
+
+  buttonItems.on('click', function(event) {
+    if (name.text() !== 'Items') {
+      name.text('Items ');
+      spanOne.text(' Lvl 10 ');
+      spanTwo.text(' HP 250/250 ');
+      spanThree.text(' AP 65/65 ');
+      spanFour.text(' Caps 2045 ');
+
+      scrContain.append(weaponsList);
+      scrContain.append(weaponsDesc);
+
+      buttonOne.text(' -Weapons- ');
+      buttonTwo.text(' -Appearel- ');
+      buttonThree.text(' -Aid- ');
+      buttonFour.text(' -Misc- ');
+      buttonFive.text(' -Ammo- ');
+      vaultBoy.remove();
+      dataMap.remove();
+    } else {
+      event.preventDefaut;
+    }
+    buttonOne.on('click', function() {
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(weapon, function(key, value) {
+
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
+
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
     });
+    buttonTwo.on('click', function() {
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(armors, function(key, value) {
 
-    buttonOne.text(' -Weapons- ');
-    buttonTwo.text(' -Appearel- ');
-    buttonThree.text(' -Aid- ');
-    buttonFour.text(' -Misc- ');
-    buttonFive.text(' -Ammo- ');
-    vaultBoy.remove();
-    dataMap.remove();
-  }
-  else{
-    event.preventDefaut;
-  }
-})
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
 
-buttonData.on('click',function(event){
-  if(name.text()!=='Data'){
-    name.text(' Data ');
-    spanOne.text('');
-    spanTwo.text(' Mojave ');
-    spanThree.text('');
-    spanFour.text(' 10.06.81 ');
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+    buttonThree.on('click', function() {
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(aid, function(key, value) {
 
-    scrContain.append(dataMap);
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
 
-    buttonOne.text(' -World Map- ');
-    buttonTwo.text(' -Local Map- ');
-    buttonThree.text(' -Quests- ');
-    buttonFour.text(' -Misc- ');
-    buttonFive.text(' -Radio- ');
-    vaultBoy.remove();
-    weaponsList.empty();
-    weaponsDesc.remove();
-  }
-  else{
-    event.preventDefaut;
-  }
-})
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+    buttonFour.on('click', function() {
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(misc, function(key, value) {
 
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
 
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+    buttonFive.on('click', function() {
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(ammo, function(key, value) {
 
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
+
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+  })
+
+  buttonData.on('click', function(event) {
+    if (name.text() !== 'Data') {
+      name.text(' Data ');
+      spanOne.text('');
+      spanTwo.text(' Mojave ');
+      spanThree.text('');
+      spanFour.text(' 10.06.81 ');
+
+      scrContain.append(dataMap);
+
+      buttonOne.text(' -World Map- ');
+      buttonTwo.text(' -Local Map- ');
+      buttonThree.text(' -Quests- ');
+      buttonFour.text(' -Misc- ');
+      buttonFive.text(' -Radio- ');
+      vaultBoy.remove();
+      weaponsList.empty();
+      weaponsDesc.remove();
+    } else {
+      event.preventDefaut;
+    }
+  })
 
 });
 
