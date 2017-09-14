@@ -128,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
       name: 'bomb',
       description: 'fff'
+    }, {
+      name: 'rilfe',
+      description: 'fff'
     }
   ];
 
@@ -150,6 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
       name: 'mask',
       description: 'lll'
+    }, {
+      name: 'suit',
+      description: 'fff'
     }
   ];
 
@@ -172,6 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
       name: 'Nuka-Cola',
       description: 'sss'
+    }, {
+      name: 'corn',
+      description: 'fff'
     }
   ];
 
@@ -194,6 +203,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
       name: 'hammer',
       description: '123'
+    }, {
+      name: 'can',
+      description: 'fff'
     }
   ];
 
@@ -216,9 +228,126 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
       name: 'rocket',
       description: 'rocket'
+    }, {
+      name: '5,56mm',
+      description: 'fff'
     }
   ];
 
+  let special = [
+    {
+      name: 'strength',
+      description: 'Strength is a measure of your raw physical power. It affects how much you can carry and the damage of all melee attacks',
+      rank:'[8/10]'
+    }, {
+      name: 'Perception',
+      description: 'Perception is your environmental awareness and sixth sense. Affects in weapon accuracy in V.A.T.S.',
+      rank:'[8/10]'
+    }, {
+      name: 'Endurance',
+      description: 'Stamina and physical toughness. Character with a high endurance will survive where others may not',
+      rank:'[7/10]'
+    }, {
+      name: 'Charisma',
+      description: 'Charisma is ypur ability to charm and convince others. It affects yor success to persuade in dialogue and price when you barter.',
+      rank:'[4/10]'
+    }, {
+      name: 'Intelligence',
+      description: 'Intelligence is a measure of your overall mental acuity. It affects the number of Experience Points earned.',
+      rank:'[7/10]'
+    }, {
+      name: 'Agility',
+      description: 'Agility is you measure of your overall finesse and reflexess. It affects the number of Action Points in V.A.T.S. and your ability to sneak.',
+      rank:'[9/10]'
+    },
+    {
+      name: 'Luck',
+      description: 'Luck is a measure of you overall good fortune. It affects the recharge rate of Critical hits and your chance to find better items.',
+      rank:'[5/10]'
+    }
+  ];
+
+  let skills = [
+    {
+      name: 'barter',
+      description: 'The barter skill affects the price you get for buying and selling items. In general the higher your barter skill, the lower your prices on purchased items',
+      rank: '[75/100]'
+    }, {
+      name: 'energy weapons',
+      description: 'The energy weapons skill determines your effectivenss with any weapon that uses Small Energy Cells, Micro Fusions Cells, EC Packs or Flamer Fuel as ammunition',
+      rank:'[67/100]'
+    }, {
+      name: 'sneak',
+      description: 'The higher you sneak skill, the easier it is to remain undetected, steal an item or pick someones pocket. Successfully attacking while undetected grants an automatic critical hit',
+      rank:'[23/100]'
+    }, {
+      name: 'survival',
+      description: 'The survival skills increases the Hit Points you receive from food and drink. It also helps you create consumable items at campfires',
+      rank:'[81/100]'
+    }, {
+      name: 'explosives',
+      description: 'The explosives skill determines the ease of disarming any hostile mines and the effectivenss of any explosive weapon(all mines, granades, missile launcher, Fat Man, etc.)',
+      rank:'[55/100]'
+    }, {
+      name: 'melee weapons',
+      description: 'The melee weapons skill determines your effectivenss with any melle weapon, from simple lead pipe all the way up to the high-tech Super Sledge',
+      rank:'[38/100]'
+    }, {
+      name: 'repair',
+      description: 'the reapir skill allows you to maintain any weapons and appearel. In addition repair allows you to create items and guns ammunition at reloading benches',
+      rank:'[89/100]'
+    }
+  ];
+
+  let perks = [
+    {
+      name: 'in shining armor',
+      description: '10mm'
+    }, {
+      name: 'hunter',
+      description: '.44'
+    }, {
+      name: 'retention',
+      description: 'cell'
+    }, {
+      name: 'rapid reload',
+      description: '5mm'
+    }, {
+      name: 'slayer',
+      description: '20ga'
+    }, {
+      name: 'meltdown',
+      description: 'rocket'
+    }, {
+      name: 'laser commander',
+      description: 'fff'
+    }
+  ];
+
+  let general = [
+    {
+      name: 'Brotherhood of the steel',
+      description: '10mm'
+    }, {
+      name: 'NCR',
+      description: '.44'
+    }, {
+      name: 'Legion',
+      description: 'cell'
+    }, {
+      name: 'Freeside',
+      description: '5mm'
+    }, {
+      name: 'Novac',
+      description: '20ga'
+    }, {
+      name: 'Boomers',
+      description: 'rocket'
+    }, {
+      name: 'Followers of the Apocalypse',
+      description: 'fff'
+    }
+  ];
   pipScreen.append(scrHead);
   pipScreen.append(scrContain);
   pipScreen.append(scrFoot);
@@ -259,12 +388,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let weaponsDesc = $('<div>');
   weaponsDesc.addClass('description');
 
-  let armorList = $('<div>');
-  armorList.addClass('weaponsList');
-
-  let armorDesc = $('<div>');
-  armorDesc.addClass('description');
-
   let meter = $('<div>');
   meter.addClass('meter');
   leftside.append(meter);
@@ -299,6 +422,9 @@ document.addEventListener('DOMContentLoaded', function() {
   version.text('Vault 3');
   model.text('Model 3000');
 
+//STATS ////////////////////////////////////////////////////////////
+
+
   buttonStats.on('click', function(event) {
 
     if (name.text() !== 'Stats') {
@@ -308,7 +434,8 @@ document.addEventListener('DOMContentLoaded', function() {
       spanThree.text(' AP 65/65 ');
       spanFour.text(' XP 3000/4500 ');
 
-      scrContain.append(vaultBoy);
+      scrContain.append(weaponsList);
+      scrContain.append(weaponsDesc);
 
       buttonOne.text(' -Status- ');
       buttonTwo.text(' -S.P.E.C.I.A.L- ');
@@ -317,16 +444,116 @@ document.addEventListener('DOMContentLoaded', function() {
       buttonFive.text(' -General- ');
 
       weaponsList.empty();
-      weaponsDesc.remove();
+      weaponsDesc.empty();
       dataMap.remove();
     } else {
       event.preventDefaut;
-
     }
+    buttonOne.on('click',function(){
 
+      weaponsList.empty();
+      weaponsDesc.empty();
+      scrContain.append(vaultBoy);
+    })
+    buttonTwo.on('click', function() {
+
+      vaultBoy.remove();
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(special, function(key, value) {
+
+        let para = $('<p>');
+        let desc = $('<p>');
+        let rank = $('<p>');
+
+        rank.addClass('rank');
+
+        weaponsList.append(para);
+        para.text(value.name);
+        desc.text(value.description);
+        rank.text(value.rank);
+
+        para.on('mouseenter', function() {
+          weaponsDesc.append(rank);
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+    buttonThree.on('click', function() {
+      vaultBoy.remove();
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(skills, function(key, value) {
+
+        let para = $('<p>');
+        let desc = $('<p>');
+        let rank = $('<p>');
+        rank.addClass('rank');
+        weaponsList.append(para);
+
+        para.text(value.name);
+        desc.text(value.description);
+        rank.text(value.rank);
+
+        para.on('mouseenter', function() {
+          weaponsDesc.append(rank);
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+    buttonFour.on('click', function() {
+      vaultBoy.remove();
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(perks, function(key, value) {
+
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
+
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
+    buttonFive.on('click', function() {
+      vaultBoy.remove();
+      weaponsList.empty();
+      weaponsDesc.empty();
+      $.each(general, function(key, value) {
+
+        let para = $('<p>');
+        let desc = $('<p>');
+        weaponsList.append(para);
+
+        para.text(value.name);
+        desc.text(value.description);
+        para.on('mouseenter', function() {
+          weaponsDesc.append(desc);
+        })
+        para.on('mouseout', function() {
+          weaponsDesc.empty();
+        })
+      });
+    });
   })
 
+//ITEMS /////////////////////////////////////////////////////////////////
+
   buttonItems.on('click', function(event) {
+    weaponsList.empty();
+    weaponsDesc.empty();
     if (name.text() !== 'Items') {
       name.text('Items ');
       spanOne.text(' Lvl 10 ');
@@ -348,6 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefaut;
     }
     buttonOne.on('click', function() {
+      vaultBoy.remove();
       weaponsList.empty();
       weaponsDesc.empty();
       $.each(weapon, function(key, value) {
@@ -443,6 +671,9 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   })
+
+//DATA
+
 
   buttonData.on('click', function(event) {
     if (name.text() !== 'Data') {
