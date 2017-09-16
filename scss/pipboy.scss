@@ -87,18 +87,15 @@ span{
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 20rem;
+  height: 23rem;
   p{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 15rem;
+    width: 20rem;
+    text-align: center;
 
   }
-}
-.rank{
-  font-weight: bold;
-  font-size: 2rem;
 }
 .threebuttons{
   width: 5rem;
