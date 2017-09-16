@@ -42,51 +42,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let weapon = [
     {
-      name: 'shootgun',
-      description: 'aaa'
+      name: '9mm Pistol',
+      description: 'DMG:16 | Weight:1.5 | Value: 100',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/3/36/9mm_pistol_icon.png/revision/latest?cb=20110430005155'
     }, {
-      name: 'pistol',
-      description: 'bbb'
+      name: 'Cowboy repeater',
+      description: 'DMG:32 | Weight:5 | Value: 800',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/1/1c/Cowboy_repeater_icon.png/revision/latest?cb=20110501175400'
     }, {
-      name: 'granate',
-      description: 'ccc'
+      name: 'Sniper rifle',
+      description: 'DMG:76 | Weight:8 | Value: 4100',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/1/19/Sniper_rifle_icon.png/revision/latest?cb=20110502173635'
     }, {
-      name: 'knife',
-      description: 'ddd'
+      name: 'Hunting shotgun',
+      description: 'DMG:81 | Weight:7.5 | Value: 800',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/3/3a/Hunting_shotgun_icon.png/revision/latest?cb=20110501184019'
     }, {
-      name: 'dynamite',
-      description: 'eee'
+      name: 'YCS/186',
+      description: 'DMG:140 | Weight:8 | Value: 3000',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/6/6f/Gauss_rifle_icon.png/revision/latest?cb=20110501181913'
     }, {
-      name: 'bomb',
-      description: 'fff'
+      name: 'Frag grenade',
+      description: 'DMG:120 | Weight:0.5 | Value: 150',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/b/bd/Frag_grenade_icon.png/revision/latest?cb=20110501181506'
     }, {
-      name: 'rilfe',
-      description: 'fff'
+      name: 'Sledgehammer',
+      description: 'DMG:33 | Weight:12 | Value: 130',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/5/5e/Sledgehammer_icon.png/revision/latest?cb=20110501222537'
     }
   ];
 
   let armors = [
     {
-      name: 'RNK armor',
-      description: 'ggg'
+      name: 'Legion prime armor',
+      description: 'DT:8 | Weight:15 | Value: 220',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/f/f5/Icon_Legion_prime_armor.png/revision/latest?cb=20110430181644'
     }, {
-      name: 'Brotherhood of steel armor',
-      description: 'hhh'
+      name: 'Space suit',
+      description: 'DT:10 | Weight:7 | Value: 800 | Effects: +40 Radiation Resistance',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/3/34/Icon_space_suit.png/revision/latest?cb=20110601222003'
     }, {
-      name: 'Legion heavy armor',
-      description: 'iii'
+      name: 'T-51b power armor',
+      description: 'DT:25 | Weight:40 | Value: 5200 | Effects: +1 STR | +25 Radiation Resistance',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/e/ec/Icon_power_armor.png/revision/latest?cb=20110607203356'
     }, {
-      name: 'cowboy hat',
-      description: 'jjj'
+      name: '1st Recon beret',
+      description: 'DT:0 | Weight:1 | Value: 40 | Effects: +1 PER',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/a/a4/Icon_beret.png/revision/latest?cb=20110607171719'
     }, {
-      name: 'helmet',
-      description: 'kkk'
+      name: 'Radii-accentuator',
+      description: 'DT:3 | Weight:1 | Value: 3500 | Effects: +1 END',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/5/50/Icon_valence_radii_accentuator.png/revision/latest?cb=20111228194846'
     }, {
-      name: 'mask',
-      description: 'lll'
+      name: 'Repairman jumpsuit',
+      description: 'DT:0 | Weight:1 | Value: 6 | Effects: +5 Repair',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/d/d0/Icon_red_jumpsuit.png/revision/latest?cb=20110508222612'
     }, {
-      name: 'suit',
-      description: 'fff'
+      name: 'Dr. Kleins scrubs',
+      description: 'DT:4 | Weight:4 | Value: 6000 | Effects: +2 INT | +10 Science',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/7/73/Icon_scientist_scrubs.png/revision/latest?cb=20110826001053'
     }
   ];
 
@@ -169,114 +183,142 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       name: 'strength',
       description: 'Strength is a measure of your raw physical power. It affects how much you can carry and the damage of all melee attacks',
-      rank:'[8/10]'
+      rank:'[8/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/a/a1/Strength2_icon.png/revision/latest?cb=20130129153428'
     }, {
       name: 'Perception',
       description: 'Perception is your environmental awareness and sixth sense. Affects in weapon accuracy in V.A.T.S.',
-      rank:'[8/10]'
+      rank:'[8/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/6/66/Perception_icon.png/revision/latest?cb=20130131151206'
     }, {
       name: 'Endurance',
       description: 'Stamina and physical toughness. Character with a high endurance will survive where others may not',
-      rank:'[7/10]'
+      rank:'[7/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/0/0a/Endurance.png/revision/latest?cb=20101112153138'
     }, {
       name: 'Charisma',
       description: 'Charisma is ypur ability to charm and convince others. It affects yor success to persuade in dialogue and price when you barter.',
-      rank:'[4/10]'
+      rank:'[4/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/9/91/Charisma_icon.png/revision/latest?cb=20130524220649'
     }, {
       name: 'Intelligence',
       description: 'Intelligence is a measure of your overall mental acuity. It affects the number of Experience Points earned.',
-      rank:'[7/10]'
+      rank:'[7/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/5/5b/Intelligence.png/revision/latest?cb=20151012185242'
     }, {
       name: 'Agility',
       description: 'Agility is you measure of your overall finesse and reflexess. It affects the number of Action Points in V.A.T.S. and your ability to sneak.',
-      rank:'[9/10]'
+      rank:'[9/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/1/14/Agility.png/revision/latest?cb=20101127221637'
     },
     {
       name: 'Luck',
       description: 'Luck is a measure of you overall good fortune. It affects the recharge rate of Critical hits and your chance to find better items.',
-      rank:'[5/10]'
+      rank:'[5/10]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/c/c9/Luck_icon.png/revision/latest?cb=20130524150642'
     }
   ];
 
   let skills = [
     {
       name: 'barter',
-      description: 'The barter skill affects the price you get for buying and selling items. In general the higher your barter skill, the lower your prices on purchased items',
-      rank: '[75/100]'
+      description: 'Affects the price you get for buying and selling items. In general the higher your barter skill, the lower your prices on purchased items',
+      rank: '[75/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/7/74/Barter.png/revision/latest?cb=20101127223210'
     }, {
       name: 'energy weapons',
-      description: 'The energy weapons skill determines your effectivenss with any weapon that uses Small Energy Cells, Micro Fusions Cells, EC Packs or Flamer Fuel as ammunition',
-      rank:'[67/100]'
+      description: 'The energy weapons skill determines your effectivenss with any weapon that uses Small Energy Cells, Micro Fusions Cells etc. as ammunition',
+      rank:'[67/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/8/83/EnergyWeaponsFO3.png/revision/latest?cb=20101127222911'
     }, {
       name: 'sneak',
       description: 'The higher you sneak skill, the easier it is to remain undetected, steal an item or pick someones pocket. Successfully attacking while undetected grants an automatic critical hit',
-      rank:'[23/100]'
+      rank:'[23/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/1/12/Icon_Fo3_Sneak_skill.png/revision/latest?cb=20140321224346'
     }, {
       name: 'survival',
       description: 'The survival skills increases the Hit Points you receive from food and drink. It also helps you create consumable items at campfires',
-      rank:'[81/100]'
+      rank:'[81/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/6/60/Survival.png/revision/latest?cb=20101127225429'
     }, {
       name: 'explosives',
-      description: 'The explosives skill determines the ease of disarming any hostile mines and the effectivenss of any explosive weapon(all mines, granades, missile launcher, Fat Man, etc.)',
-      rank:'[55/100]'
+      description: 'The explosives skill determines the ease of disarming any hostile mines and the effectivenss of any explosive weapon',
+      rank:'[55/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/1/10/Explosives.png/revision/latest?cb=20101127223443'
     }, {
       name: 'melee weapons',
       description: 'The melee weapons skill determines your effectivenss with any melle weapon, from simple lead pipe all the way up to the high-tech Super Sledge',
-      rank:'[38/100]'
+      rank:'[38/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/c/c2/MeleeWeapons.png/revision/latest?cb=20101127224504'
     }, {
       name: 'repair',
       description: 'the reapir skill allows you to maintain any weapons and appearel. In addition repair allows you to create items and guns ammunition at reloading benches',
-      rank:'[89/100]'
+      rank:'[89/100]',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/4/46/Repair_icon.png/revision/latest?cb=20170829205129'
     }
   ];
 
   let perks = [
     {
-      name: 'in shining armor',
-      description: '10mm'
+      name: 'educated',
+      description: 'Each level of Educated will add +2 skill points when you gain a new experience level. This Perk works best when purchased early in your adventure.',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/9/9c/EducatedFO3.png/revision/latest?cb=20101125051917'
     }, {
-      name: 'hunter',
-      description: '.44'
+      name: 'sniper',
+      description: 'With the Sniper perk, your chance to hit an opponents head in V.A.T.S. is significantly increased.',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/4/44/Sniper_FO3.png/revision/latest?cb=20120905173932'
     }, {
-      name: 'retention',
-      description: 'cell'
+      name: 'Commando',
+      description: 'While using a rifle (or similar two-handed weapon), your accuracy in V.A.T.S. is significantly increased',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/5/50/Commando.png/revision/latest?cb=20170128163808'
     }, {
-      name: 'rapid reload',
-      description: '5mm'
+      name: 'Nerves of Steel',
+      description: 'With the Nerves of Steel perk, you regenerate Action Points much more quickly than you normally would.',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/1/10/Nerves_of_Steel.png/revision/latest?cb=20130416005813'
     }, {
-      name: 'slayer',
-      description: '20ga'
+      name: 'Lifegiver',
+      description: 'With the Life Giver perk, you gain an additional 30 Hit Points',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/f/f6/LifegiverF3.png/revision/latest?cb=20101126182118'
     }, {
-      name: 'meltdown',
-      description: 'rocket'
+      name: 'Robotics Expert',
+      description: 'You do an additional 25% damage to any robot. Also, sneaking up on a hostile robot undetected and activating it will put that robot into shutdown state.',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/6/64/Robotics_Expert.png/revision/latest?cb=20101126182946'
     }, {
-      name: 'laser commander',
-      description: 'fff'
+      name: 'Fast Metabolism',
+      description: 'With the Fast Metabolism perk, you gain a 20% Health bonus when using Stimpaks.',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/c/cc/Fast_Metabolism_FO3.png/revision/latest?cb=20170224185640'
     }
   ];
 
   let general = [
     {
       name: 'Brotherhood of the steel',
-      description: '10mm'
+      description: 'Liked',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/2/29/BrotherhoodOfSteelReputation.png/revision/latest?cb=20110122230400'
     }, {
       name: 'NCR',
-      description: '.44'
+      description: 'Hated',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/d/dd/NCRReputation.png/revision/latest?cb=20110122221328'
     }, {
       name: 'Legion',
-      description: 'cell'
+      description: 'Accepted',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/5/5b/CaesarLegionReputation.png/revision/latest?cb=20110122230239'
     }, {
-      name: 'Freeside',
-      description: '5mm'
+      name: 'Powder Gangers',
+      description: 'Vilified',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/f/fb/PowderNewVegas.png/revision/latest?cb=20110122220938'
     }, {
-      name: 'Novac',
-      description: '20ga'
+      name: 'White Glove Society',
+      description: 'Idolized',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/5/5a/WhiteGloveSociety.png/revision/latest?cb=20110122220403'
     }, {
       name: 'Boomers',
-      description: 'rocket'
+      description: 'Idolized',
+      source:'https://vignette.wikia.nocookie.net/fallout/images/4/4e/BoomersReputation.png/revision/latest?cb=20110122230759'
     }, {
-      name: 'Followers of the Apocalypse',
-      description: 'fff'
+      name: 'Great Khans',
+      description: 'Neutral',
+      source: 'https://vignette.wikia.nocookie.net/fallout/images/d/db/GreatKhansNewVegas.png/revision/latest?cb=20110122221607'
     }
   ];
   pipScreen.append(scrHead);
@@ -372,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
       buttonTwo.text(' -S.P.E.C.I.A.L- ');
       buttonThree.text(' -Skills- ');
       buttonFour.text(' -Perks- ');
-      buttonFive.text(' -General- ');
+      buttonFive.text(' -Reputation- ');
 
       weaponsList.empty();
       weaponsDesc.empty();
@@ -396,17 +438,19 @@ document.addEventListener('DOMContentLoaded', function() {
         let para = $('<p>');
         let desc = $('<p>');
         let rank = $('<p>');
+        let source = $('<img>');
 
-        rank.addClass('rank');
 
         weaponsList.append(para);
         para.text(value.name);
         desc.text(value.description);
         rank.text(value.rank);
+        source.attr('src',value.source);
 
         para.on('mouseenter', function() {
-          weaponsDesc.append(rank);
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
+          weaponsDesc.append(rank);
         })
         para.on('mouseout', function() {
           weaponsDesc.empty();
@@ -422,16 +466,19 @@ document.addEventListener('DOMContentLoaded', function() {
         let para = $('<p>');
         let desc = $('<p>');
         let rank = $('<p>');
-        rank.addClass('rank');
+        let source = $('<img>');
+
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
         rank.text(value.rank);
+        source.attr('src',value.source);
 
         para.on('mouseenter', function() {
-          weaponsDesc.append(rank);
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
+          weaponsDesc.append(rank);
         })
         para.on('mouseout', function() {
           weaponsDesc.empty();
@@ -446,11 +493,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
@@ -466,11 +516,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
@@ -513,11 +566,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
@@ -526,17 +582,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     buttonTwo.on('click', function() {
+      vaultBoy.remove();
       weaponsList.empty();
       weaponsDesc.empty();
       $.each(armors, function(key, value) {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
@@ -545,17 +605,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     buttonThree.on('click', function() {
+      vaultBoy.remove();
       weaponsList.empty();
       weaponsDesc.empty();
       $.each(aid, function(key, value) {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
@@ -564,17 +628,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     buttonFour.on('click', function() {
+      vaultBoy.remove();
       weaponsList.empty();
       weaponsDesc.empty();
       $.each(misc, function(key, value) {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
@@ -583,17 +651,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     buttonFive.on('click', function() {
+      vaultBoy.remove();
       weaponsList.empty();
       weaponsDesc.empty();
       $.each(ammo, function(key, value) {
 
         let para = $('<p>');
         let desc = $('<p>');
+        let source = $('<img>');
         weaponsList.append(para);
 
         para.text(value.name);
         desc.text(value.description);
+        source.attr('src',value.source);
         para.on('mouseenter', function() {
+          weaponsDesc.append(source);
           weaponsDesc.append(desc);
         })
         para.on('mouseout', function() {
